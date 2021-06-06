@@ -17,7 +17,8 @@ namespace hipermercadograndao.Telas
         Funcionario funcionarioativo;
         TelaUsuario telausuario = new TelaUsuario();
         List<Produto> Carrinho = new List<Produto>();
-        string Fatura= "**** GRANDÃO SUPERMECADO ****";
+        float ValorTotal;
+        string Fatura= "********** GRANDÃO SUPERMECADO **********\nNome\tTotal\tQuantidade\tValor";
 
         public void Atualizar()
         {
@@ -43,31 +44,36 @@ namespace hipermercadograndao.Telas
 
         private void chb_porkg_CheckedChanged(object sender, EventArgs e)
         {
-            if(chb_porkg.Checked == true)
+            if(chb_porkg.Checked)
             {
-                nud_kilo.Visible = true;
-                lbl_kilo.Visible = true;
+                lbl_valor.Text = "Valor por Kg";
+                lbl_quantidade.Text = "Quantos Kilos?";
+                nud_quantidade.DecimalPlaces = 1;
             }
             else
             {
-                nud_kilo.Visible = false;
-                lbl_kilo.Visible = false;
+                lbl_valor.Text = "Valor produto";
+                lbl_quantidade.Text = "Quantidade";
+                nud_quantidade.DecimalPlaces = 0;
             }
         }
 
         private void btn_adicionar_Click(object sender, EventArgs e)
         {
-            if (chb_porkg.Checked == true)
+            if (chb_porkg.Checked)
             {
-                ProdutoKg produtokg = new ProdutoKg(txt_nomeProduto.Text,Convert.ToDouble(nud_valor.Value),Convert.ToDouble(nud_kilo.Value));
+                ProdutoKg produtokg = new ProdutoKg(txt_nomeProduto.Text,(float)(nud_valor.Value), (float)(nud_quantidade.Value));
                 Carrinho.Add(produtokg);
-                Fatura += "\n" + produtokg.Nome + "\tR$ " + "\tKG: " + produtokg.Kilo +"\t"+produtokg.Valor +"/KG" ;
+                Fatura += string.Format("\n{0}\tR${1}\t{2}Kg  R${3}/KG",
+                    produtokg.Nome, produtokg.CalcularPreco().ToString("F"), produtokg.Kilo.ToString("F"), produtokg.Valor.ToString("F"));
+                ValorTotal += produtokg.CalcularPreco();
             }
             else
             {
-                ProdutoUnitario produto = new ProdutoUnitario(txt_nomeProduto.Text, Convert.ToDouble(nud_valor.Value));
+                ProdutoUnitario produto = new ProdutoUnitario(txt_nomeProduto.Text, (float)(nud_valor.Value), (int)(nud_quantidade.Value)) ;
                 Carrinho.Add(produto);
-                Fatura += "\n" + produto.Nome +"\tR$ " + produto.Valor;
+                Fatura += string.Format("\n{0}\tR${1}\tQtd:{2} \tR${3}Uni.", produto.Nome,produto.CalcularPreco().ToString("F"), produto.Quantidade, produto.Valor.ToString("F"));
+                ValorTotal += produto.Valor;
             }
             foreach (Produto item in Carrinho)
             {
@@ -75,8 +81,11 @@ namespace hipermercadograndao.Telas
             }
             Atualizar();
         }
-
         private void btn_remover_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btn_finalizar_Click(object sender, EventArgs e)
         {
 
         }

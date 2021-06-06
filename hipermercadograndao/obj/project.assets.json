@@ -8,19 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Simulador\\.nuget\\packages\\": {}
+    "C:\\Users\\Jun\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Simulador\\Desktop\\mercadograndao\\hipermercadograndao\\hipermercadograndao.csproj",
+      "projectUniqueName": "C:\\Users\\Jun\\Desktop\\mercadograndao\\hipermercadograndao\\hipermercadograndao.csproj",
       "projectName": "hipermercadograndao",
-      "projectPath": "C:\\Users\\Simulador\\Desktop\\mercadograndao\\hipermercadograndao\\hipermercadograndao.csproj",
-      "packagesPath": "C:\\Users\\Simulador\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Simulador\\Desktop\\mercadograndao\\hipermercadograndao\\obj\\",
+      "projectPath": "C:\\Users\\Jun\\Desktop\\mercadograndao\\hipermercadograndao\\hipermercadograndao.csproj",
+      "packagesPath": "C:\\Users\\Jun\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jun\\Desktop\\mercadograndao\\hipermercadograndao\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Simulador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jun\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

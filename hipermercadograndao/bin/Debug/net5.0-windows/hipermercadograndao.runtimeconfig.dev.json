@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Simulador\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Simulador\\.nuget\\packages"
+      "C:\\Users\\Jun\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Jun\\.nuget\\packages"
     ]
   }
 }

@@ -8,12 +8,16 @@ namespace hipermercadograndao.Produtos
 {
     public class ProdutoKg : Produto
     {
-        public double Kilo { get; set; }
+        public float Kilo { get; set; }
 
-        public ProdutoKg(string nome, double valor, double kilo) : base(nome, valor)
+        public ProdutoKg(string nome, float valor, float kilo) : base(nome, valor)
         {
             this.Kilo = kilo;
         }
 
+        public override float CalcularPreco()
+        {
+            return Kilo * Valor;
+        }
     }
 }

@@ -8,9 +8,15 @@ namespace hipermercadograndao.Produtos
 {
     public class ProdutoUnitario : Produto
     {
-        public ProdutoUnitario(string nome, double valor) : base( nome, valor)
+        public int Quantidade { get; set; }
+        public ProdutoUnitario(string nome, float valor,int quantidade) : base( nome, valor)
         {
+            this.Quantidade = quantidade;
+        }
 
+        public override float CalcularPreco()
+        {
+            return Quantidade * Valor;
         }
     }
 }
