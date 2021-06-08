@@ -13,6 +13,7 @@ namespace hipermercadograndao.Produtos
         public ProdutoKg(string nome, float valor, float kilo) : base(nome, valor)
         {
             this.Kilo = kilo;
+            this.ValorTotalP = CalcularPreco();
         }
 
         public override float CalcularPreco()

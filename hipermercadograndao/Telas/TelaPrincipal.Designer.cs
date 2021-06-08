@@ -43,6 +43,7 @@ namespace hipermercadograndao.Telas
             this.btn_finalizar = new System.Windows.Forms.Button();
             this.nud_quantidade = new System.Windows.Forms.NumericUpDown();
             this.lbl_quantidade = new System.Windows.Forms.Label();
+            this.lbl_valortotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_valor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quantidade)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,7 @@ namespace hipermercadograndao.Telas
             this.lbl_TrocarUsuario.AutoSize = true;
             this.lbl_TrocarUsuario.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.lbl_TrocarUsuario.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lbl_TrocarUsuario.Location = new System.Drawing.Point(561, 9);
+            this.lbl_TrocarUsuario.Location = new System.Drawing.Point(520, 9);
             this.lbl_TrocarUsuario.Name = "lbl_TrocarUsuario";
             this.lbl_TrocarUsuario.Size = new System.Drawing.Size(145, 30);
             this.lbl_TrocarUsuario.TabIndex = 0;
@@ -63,7 +64,7 @@ namespace hipermercadograndao.Telas
             // 
             this.lbl_Usuario.AutoSize = true;
             this.lbl_Usuario.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Usuario.Location = new System.Drawing.Point(17, 14);
+            this.lbl_Usuario.Location = new System.Drawing.Point(17, 9);
             this.lbl_Usuario.Name = "lbl_Usuario";
             this.lbl_Usuario.Size = new System.Drawing.Size(63, 25);
             this.lbl_Usuario.TabIndex = 1;
@@ -71,7 +72,7 @@ namespace hipermercadograndao.Telas
             // 
             // txt_nomeProduto
             // 
-            this.txt_nomeProduto.Location = new System.Drawing.Point(17, 119);
+            this.txt_nomeProduto.Location = new System.Drawing.Point(17, 69);
             this.txt_nomeProduto.Name = "txt_nomeProduto";
             this.txt_nomeProduto.Size = new System.Drawing.Size(127, 23);
             this.txt_nomeProduto.TabIndex = 2;
@@ -80,7 +81,7 @@ namespace hipermercadograndao.Telas
             // 
             this.chb_porkg.AutoSize = true;
             this.chb_porkg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chb_porkg.Location = new System.Drawing.Point(17, 209);
+            this.chb_porkg.Location = new System.Drawing.Point(182, 115);
             this.chb_porkg.Name = "chb_porkg";
             this.chb_porkg.Size = new System.Drawing.Size(102, 25);
             this.chb_porkg.TabIndex = 3;
@@ -92,7 +93,7 @@ namespace hipermercadograndao.Telas
             // 
             this.lbl_nomeproduto.AutoSize = true;
             this.lbl_nomeproduto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_nomeproduto.Location = new System.Drawing.Point(12, 95);
+            this.lbl_nomeproduto.Location = new System.Drawing.Point(12, 45);
             this.lbl_nomeproduto.Name = "lbl_nomeproduto";
             this.lbl_nomeproduto.Size = new System.Drawing.Size(113, 21);
             this.lbl_nomeproduto.TabIndex = 4;
@@ -102,7 +103,7 @@ namespace hipermercadograndao.Telas
             // 
             this.lbl_valor.AutoSize = true;
             this.lbl_valor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_valor.Location = new System.Drawing.Point(223, 95);
+            this.lbl_valor.Location = new System.Drawing.Point(182, 45);
             this.lbl_valor.Name = "lbl_valor";
             this.lbl_valor.Size = new System.Drawing.Size(106, 21);
             this.lbl_valor.TabIndex = 6;
@@ -110,9 +111,9 @@ namespace hipermercadograndao.Telas
             // 
             // btn_adicionar
             // 
-            this.btn_adicionar.Location = new System.Drawing.Point(17, 289);
+            this.btn_adicionar.Location = new System.Drawing.Point(17, 148);
             this.btn_adicionar.Name = "btn_adicionar";
-            this.btn_adicionar.Size = new System.Drawing.Size(127, 78);
+            this.btn_adicionar.Size = new System.Drawing.Size(127, 49);
             this.btn_adicionar.TabIndex = 9;
             this.btn_adicionar.Text = "Adicionar";
             this.btn_adicionar.UseVisualStyleBackColor = true;
@@ -120,9 +121,9 @@ namespace hipermercadograndao.Telas
             // 
             // btn_remover
             // 
-            this.btn_remover.Location = new System.Drawing.Point(356, 373);
+            this.btn_remover.Location = new System.Drawing.Point(182, 265);
             this.btn_remover.Name = "btn_remover";
-            this.btn_remover.Size = new System.Drawing.Size(127, 23);
+            this.btn_remover.Size = new System.Drawing.Size(127, 39);
             this.btn_remover.TabIndex = 10;
             this.btn_remover.Text = "Remover";
             this.btn_remover.UseVisualStyleBackColor = true;
@@ -131,7 +132,7 @@ namespace hipermercadograndao.Telas
             // rtb_fatura
             // 
             this.rtb_fatura.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rtb_fatura.Location = new System.Drawing.Point(356, 92);
+            this.rtb_fatura.Location = new System.Drawing.Point(315, 45);
             this.rtb_fatura.Name = "rtb_fatura";
             this.rtb_fatura.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rtb_fatura.Size = new System.Drawing.Size(350, 275);
@@ -142,24 +143,24 @@ namespace hipermercadograndao.Telas
             // 
             this.cmb_Produtos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Produtos.FormattingEnabled = true;
-            this.cmb_Produtos.Location = new System.Drawing.Point(17, 373);
+            this.cmb_Produtos.Location = new System.Drawing.Point(17, 236);
             this.cmb_Produtos.Name = "cmb_Produtos";
-            this.cmb_Produtos.Size = new System.Drawing.Size(333, 23);
+            this.cmb_Produtos.Size = new System.Drawing.Size(292, 23);
             this.cmb_Produtos.TabIndex = 12;
             // 
             // nud_valor
             // 
             this.nud_valor.DecimalPlaces = 2;
-            this.nud_valor.Location = new System.Drawing.Point(223, 119);
+            this.nud_valor.Location = new System.Drawing.Point(182, 69);
             this.nud_valor.Name = "nud_valor";
             this.nud_valor.Size = new System.Drawing.Size(127, 23);
             this.nud_valor.TabIndex = 13;
             // 
             // btn_finalizar
             // 
-            this.btn_finalizar.Location = new System.Drawing.Point(223, 289);
+            this.btn_finalizar.Location = new System.Drawing.Point(182, 148);
             this.btn_finalizar.Name = "btn_finalizar";
-            this.btn_finalizar.Size = new System.Drawing.Size(127, 78);
+            this.btn_finalizar.Size = new System.Drawing.Size(127, 49);
             this.btn_finalizar.TabIndex = 15;
             this.btn_finalizar.Text = "Finalizar Compra";
             this.btn_finalizar.UseVisualStyleBackColor = true;
@@ -167,7 +168,7 @@ namespace hipermercadograndao.Telas
             // 
             // nud_quantidade
             // 
-            this.nud_quantidade.Location = new System.Drawing.Point(17, 169);
+            this.nud_quantidade.Location = new System.Drawing.Point(17, 119);
             this.nud_quantidade.Name = "nud_quantidade";
             this.nud_quantidade.Size = new System.Drawing.Size(127, 23);
             this.nud_quantidade.TabIndex = 17;
@@ -176,17 +177,28 @@ namespace hipermercadograndao.Telas
             // 
             this.lbl_quantidade.AutoSize = true;
             this.lbl_quantidade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_quantidade.Location = new System.Drawing.Point(12, 145);
+            this.lbl_quantidade.Location = new System.Drawing.Point(12, 95);
             this.lbl_quantidade.Name = "lbl_quantidade";
             this.lbl_quantidade.Size = new System.Drawing.Size(91, 21);
             this.lbl_quantidade.TabIndex = 16;
             this.lbl_quantidade.Text = "Quantidade";
             // 
+            // lbl_valortotal
+            // 
+            this.lbl_valortotal.AutoSize = true;
+            this.lbl_valortotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_valortotal.Location = new System.Drawing.Point(12, 309);
+            this.lbl_valortotal.Name = "lbl_valortotal";
+            this.lbl_valortotal.Size = new System.Drawing.Size(105, 25);
+            this.lbl_valortotal.TabIndex = 18;
+            this.lbl_valortotal.Text = "Valor Total:";
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 404);
+            this.ClientSize = new System.Drawing.Size(675, 343);
+            this.Controls.Add(this.lbl_valortotal);
             this.Controls.Add(this.nud_quantidade);
             this.Controls.Add(this.lbl_quantidade);
             this.Controls.Add(this.btn_finalizar);
@@ -227,5 +239,6 @@ namespace hipermercadograndao.Telas
         private System.Windows.Forms.Button btn_finalizar;
         private System.Windows.Forms.NumericUpDown nud_quantidade;
         private System.Windows.Forms.Label lbl_quantidade;
+        private System.Windows.Forms.Label lbl_valortotal;
     }
 }

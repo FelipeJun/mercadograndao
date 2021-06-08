@@ -12,10 +12,9 @@ namespace hipermercadograndao.Funcionarios
         {
 
         }
-
         public void Remover()
         {
-
+            System.Windows.Forms.MessageBox.Show("Removido com sucesso!");
         }
     }
 }

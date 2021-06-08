@@ -10,6 +10,7 @@ namespace hipermercadograndao
     {
         public string Nome{ get; set; }
         public float Valor { get; set; }
+        public float ValorTotalP { get; set; }
         public Produto(string nome, float valor)
         {
             this.Nome = nome;

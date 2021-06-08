@@ -36,3 +36,4 @@ C:\Users\Jun\Desktop\mercadograndao\hipermercadograndao\obj\Debug\net5.0-windows
 C:\Users\Jun\Desktop\mercadograndao\hipermercadograndao\obj\Debug\net5.0-windows\ref\hipermercadograndao.dll
 C:\Users\Jun\Desktop\mercadograndao\hipermercadograndao\obj\Debug\net5.0-windows\hipermercadograndao.pdb
 C:\Users\Jun\Desktop\mercadograndao\hipermercadograndao\obj\Debug\net5.0-windows\hipermercadograndao.genruntimeconfig.cache
+C:\Users\Jun\Desktop\mercadograndao\hipermercadograndao\obj\Debug\net5.0-windows\hipermercadograndao.Telas.TelaPagamento.resources

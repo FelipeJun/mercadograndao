@@ -12,6 +12,7 @@ namespace hipermercadograndao.Produtos
         public ProdutoUnitario(string nome, float valor,int quantidade) : base( nome, valor)
         {
             this.Quantidade = quantidade;
+            this.ValorTotalP = CalcularPreco();
         }
 
         public override float CalcularPreco()

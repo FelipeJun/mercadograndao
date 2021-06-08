@@ -8,6 +8,6 @@ namespace hipermercadograndao.Funcionarios
 {
     interface IAcessoPrivilegiado
     {
-        public abstract void Remover();
+        public void Remover();
     }
 }
