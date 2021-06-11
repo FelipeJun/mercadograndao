@@ -35,10 +35,14 @@ namespace hipermercadograndao.Telas
             this.label1 = new System.Windows.Forms.Label();
             this.btn_finalizar = new System.Windows.Forms.Button();
             this.btn_fechar = new System.Windows.Forms.Button();
+            this.lbl_dinheiro = new System.Windows.Forms.Label();
+            this.nud_dinheiro = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_dinheiro)).BeginInit();
             this.SuspendLayout();
             // 
             // rtb_fatura
             // 
+            this.rtb_fatura.BackColor = System.Drawing.SystemColors.Info;
             this.rtb_fatura.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtb_fatura.Location = new System.Drawing.Point(12, 12);
             this.rtb_fatura.Name = "rtb_fatura";
@@ -69,6 +73,7 @@ namespace hipermercadograndao.Telas
             this.cmb_Pagamento.Name = "cmb_Pagamento";
             this.cmb_Pagamento.Size = new System.Drawing.Size(252, 23);
             this.cmb_Pagamento.TabIndex = 20;
+            this.cmb_Pagamento.SelectedIndexChanged += new System.EventHandler(this.cmb_Pagamento_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -82,7 +87,7 @@ namespace hipermercadograndao.Telas
             // 
             // btn_finalizar
             // 
-            this.btn_finalizar.Location = new System.Drawing.Point(12, 387);
+            this.btn_finalizar.Location = new System.Drawing.Point(12, 433);
             this.btn_finalizar.Name = "btn_finalizar";
             this.btn_finalizar.Size = new System.Drawing.Size(126, 45);
             this.btn_finalizar.TabIndex = 22;
@@ -92,7 +97,7 @@ namespace hipermercadograndao.Telas
             // 
             // btn_fechar
             // 
-            this.btn_fechar.Location = new System.Drawing.Point(236, 387);
+            this.btn_fechar.Location = new System.Drawing.Point(236, 433);
             this.btn_fechar.Name = "btn_fechar";
             this.btn_fechar.Size = new System.Drawing.Size(126, 45);
             this.btn_fechar.TabIndex = 23;
@@ -100,20 +105,49 @@ namespace hipermercadograndao.Telas
             this.btn_fechar.UseVisualStyleBackColor = true;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
+            // lbl_dinheiro
+            // 
+            this.lbl_dinheiro.AutoSize = true;
+            this.lbl_dinheiro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_dinheiro.Location = new System.Drawing.Point(12, 379);
+            this.lbl_dinheiro.Name = "lbl_dinheiro";
+            this.lbl_dinheiro.Size = new System.Drawing.Size(73, 42);
+            this.lbl_dinheiro.TabIndex = 24;
+            this.lbl_dinheiro.Text = "Dinheiro\r\nrecebido:";
+            this.lbl_dinheiro.Visible = false;
+            // 
+            // nud_dinheiro
+            // 
+            this.nud_dinheiro.DecimalPlaces = 2;
+            this.nud_dinheiro.Location = new System.Drawing.Point(110, 398);
+            this.nud_dinheiro.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nud_dinheiro.Name = "nud_dinheiro";
+            this.nud_dinheiro.Size = new System.Drawing.Size(252, 23);
+            this.nud_dinheiro.TabIndex = 25;
+            this.nud_dinheiro.Visible = false;
+            // 
             // TelaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 444);
+            this.ClientSize = new System.Drawing.Size(374, 490);
+            this.Controls.Add(this.nud_dinheiro);
+            this.Controls.Add(this.lbl_dinheiro);
             this.Controls.Add(this.btn_fechar);
             this.Controls.Add(this.btn_finalizar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmb_Pagamento);
             this.Controls.Add(this.lbl_valortotal);
             this.Controls.Add(this.rtb_fatura);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaPagamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaPagamento";
+            ((System.ComponentModel.ISupportInitialize)(this.nud_dinheiro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,5 +161,7 @@ namespace hipermercadograndao.Telas
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_finalizar;
         private System.Windows.Forms.Button btn_fechar;
+        private System.Windows.Forms.Label lbl_dinheiro;
+        private System.Windows.Forms.NumericUpDown nud_dinheiro;
     }
 }

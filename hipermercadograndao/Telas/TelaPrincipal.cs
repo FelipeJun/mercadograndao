@@ -1,5 +1,4 @@
 ﻿using hipermercadograndao.Funcionarios;
-using hipermercadograndao.Produtos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +14,11 @@ namespace hipermercadograndao.Telas
     public partial class TelaPrincipal : Form
     {
         Funcionario funcionarioativo;
+
         TelaUsuario telausuario = new TelaUsuario();
         List<Produto> Carrinho = new List<Produto>();
         float ValorTotal;
-        string Fatura= "********** GRANDÃO SUPERMECADO **********\nNome\tTotal\tQuantidade\t\tValor";
-
+        string Fatura= "********** GRANDÃO SUPERMECADO **********\nNome\tTotal\t\tQuantidade\tValor";
         public void Atualizar()
         {
             this.funcionarioativo = telausuario.funcionarioativo;
@@ -41,6 +40,7 @@ namespace hipermercadograndao.Telas
             if(funcionarioativo == null)
             {
                 telausuario.ShowDialog();
+                Atualizar();
             }
         }
 
@@ -74,44 +74,32 @@ namespace hipermercadograndao.Telas
             }
             else
             {
-                if (chb_porkg.Checked)
-                {
-                    ProdutoKg produtokg = new ProdutoKg(txt_nomeProduto.Text, (float)(nud_valor.Value), (float)(nud_quantidade.Value));
-                    Carrinho.Add(produtokg);
-                    Fatura += string.Format("\n{0}\tR${1}\t{2}Kg  R${3}/KG",
-                        produtokg.Nome, produtokg.ValorTotalP.ToString("F"), produtokg.Kilo.ToString("F"), produtokg.Valor.ToString("F"));
-                    ValorTotal += produtokg.ValorTotalP;
-                }
-                else
-                {
-                    ProdutoUnitario produto = new ProdutoUnitario(txt_nomeProduto.Text, (float)(nud_valor.Value), (int)(nud_quantidade.Value));
-                    Carrinho.Add(produto);
-                    Fatura += string.Format("\n{0}\tR${1}\tQtd:{2} \tR${3}Uni.",
-                        produto.Nome, produto.ValorTotalP.ToString("F"), produto.Quantidade, produto.Valor.ToString("F"));
-                    ValorTotal += produto.ValorTotalP;
-                }
+                Produto produto = new Produto(txt_nomeProduto.Text, (float)(nud_valor.Value), (float)(nud_quantidade.Value));
+                string retorno = funcionarioativo.AdicionarCarrinho(Carrinho, produto,chb_porkg.Checked);
+                string[] split = retorno.Split('|');
+                Fatura += split[0];
+                ValorTotal += float.Parse(split[1]);
                 Atualizar();
             }
         }
         private void btn_remover_Click(object sender, EventArgs e)
         {
-            if(funcionarioativo is IAcessoPrivilegiado)
+            if(funcionarioativo is IAcessoPrivilegiado privilegiado)
             {
                 try
                 {
                     string itemremover = cmb_Produtos.SelectedItem.ToString();
-                    IAcessoPrivilegiado IAP = (IAcessoPrivilegiado)funcionarioativo;
                     foreach (Produto item in Carrinho)
                     {
                         if (item.Nome == itemremover)
                         {
                             Carrinho.Remove(item);
-                            ValorTotal -= item.ValorTotalP;
+                            ValorTotal -= item.ValorTotal;
                             Fatura += string.Format("\nRemovido pelo {0}: {1}", funcionarioativo.GetType().Name, item.Nome);
                             break;
                         }
                     }
-                    IAP.Remover();
+                    privilegiado.Remover();
                     Atualizar();
                 }
                 catch(NullReferenceException)
@@ -132,9 +120,18 @@ namespace hipermercadograndao.Telas
 
         private void btn_finalizar_Click(object sender, EventArgs e)
         {
-            TelaPagamento form = new TelaPagamento(Fatura, ValorTotal,funcionarioativo);
-            form.Show();
-            this.Hide();
+            if (Carrinho.Any())
+            {
+                TelaPagamento form = new TelaPagamento(Fatura, ValorTotal, funcionarioativo);
+                form.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Coloque pelo menos 1 item no carrinho!");
+            }
+
         }
+
     }
 }

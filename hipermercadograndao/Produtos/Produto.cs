@@ -6,17 +6,26 @@ using System.Threading.Tasks;
 
 namespace hipermercadograndao
 {
-    public abstract class Produto
+    public class Produto
     {
         public string Nome{ get; set; }
         public float Valor { get; set; }
-        public float ValorTotalP { get; set; }
-        public Produto(string nome, float valor)
+        //Quantidade serve para quantos produtos unitarios for comprar e para o Kilo do produto,
+        //pois os 2 irão multiplicar pelo valor do produto
+        public float Quantidade { get; set; }
+        public float ValorTotal { get; set; }
+        
+        public Produto(string nome, float valor,float quantidadeOuKIlo)
         {
             this.Nome = nome;
             this.Valor = valor;
+            this.Quantidade = quantidadeOuKIlo;
+            this.ValorTotal = CalcularPreco();
         }
 
-        public abstract float CalcularPreco();
+        public float CalcularPreco()
+        {
+            return Quantidade * Valor;
+        }
     }
 }

@@ -14,5 +14,26 @@ namespace hipermercadograndao
         {
             this.Nome = nome;
         }
+
+        public string AdicionarCarrinho(List<Produto>carrinho,Produto produto,bool Kg)
+        {
+            carrinho.Add(produto);
+            string retorno;
+            if (Kg)
+            {
+                string Fatura = string.Format("\n{0}\tR${1}\t{2}Kg\tR${3}/KG",
+                produto.Nome, produto.ValorTotal.ToString("F"), produto.Quantidade.ToString("F"), produto.Valor.ToString("F"));
+                string ValorTotal = produto.ValorTotal.ToString();
+                retorno = string.Format(Fatura + "|" + ValorTotal);
+            }
+            else
+            {
+                string Fatura = string.Format("\n{0}\tR${1}\t{2}Uni.\t\tR${3}Uni.",
+                        produto.Nome, produto.ValorTotal.ToString("F"), produto.Quantidade, produto.Valor.ToString("F"));
+                string ValorTotal = produto.ValorTotal.ToString();
+                retorno = string.Format(Fatura + "|" + ValorTotal);
+            }
+            return retorno;
+        }
     }
-}
+} 

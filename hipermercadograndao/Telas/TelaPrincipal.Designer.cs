@@ -72,9 +72,9 @@ namespace hipermercadograndao.Telas
             // 
             // txt_nomeProduto
             // 
-            this.txt_nomeProduto.Location = new System.Drawing.Point(17, 69);
+            this.txt_nomeProduto.Location = new System.Drawing.Point(17, 68);
             this.txt_nomeProduto.Name = "txt_nomeProduto";
-            this.txt_nomeProduto.Size = new System.Drawing.Size(127, 23);
+            this.txt_nomeProduto.Size = new System.Drawing.Size(122, 23);
             this.txt_nomeProduto.TabIndex = 2;
             // 
             // chb_porkg
@@ -84,7 +84,7 @@ namespace hipermercadograndao.Telas
             this.chb_porkg.Location = new System.Drawing.Point(182, 115);
             this.chb_porkg.Name = "chb_porkg";
             this.chb_porkg.Size = new System.Drawing.Size(102, 25);
-            this.chb_porkg.TabIndex = 3;
+            this.chb_porkg.TabIndex = 1;
             this.chb_porkg.Text = "É por Kilo?";
             this.chb_porkg.UseVisualStyleBackColor = true;
             this.chb_porkg.CheckedChanged += new System.EventHandler(this.chb_porkg_CheckedChanged);
@@ -111,19 +111,19 @@ namespace hipermercadograndao.Telas
             // 
             // btn_adicionar
             // 
-            this.btn_adicionar.Location = new System.Drawing.Point(17, 148);
+            this.btn_adicionar.Location = new System.Drawing.Point(12, 148);
             this.btn_adicionar.Name = "btn_adicionar";
-            this.btn_adicionar.Size = new System.Drawing.Size(127, 49);
-            this.btn_adicionar.TabIndex = 9;
+            this.btn_adicionar.Size = new System.Drawing.Size(127, 64);
+            this.btn_adicionar.TabIndex = 5;
             this.btn_adicionar.Text = "Adicionar";
             this.btn_adicionar.UseVisualStyleBackColor = true;
             this.btn_adicionar.Click += new System.EventHandler(this.btn_adicionar_Click);
             // 
             // btn_remover
             // 
-            this.btn_remover.Location = new System.Drawing.Point(182, 265);
+            this.btn_remover.Location = new System.Drawing.Point(315, 308);
             this.btn_remover.Name = "btn_remover";
-            this.btn_remover.Size = new System.Drawing.Size(127, 39);
+            this.btn_remover.Size = new System.Drawing.Size(112, 24);
             this.btn_remover.TabIndex = 10;
             this.btn_remover.Text = "Remover";
             this.btn_remover.UseVisualStyleBackColor = true;
@@ -131,11 +131,12 @@ namespace hipermercadograndao.Telas
             // 
             // rtb_fatura
             // 
+            this.rtb_fatura.BackColor = System.Drawing.SystemColors.Info;
             this.rtb_fatura.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtb_fatura.Location = new System.Drawing.Point(315, 45);
             this.rtb_fatura.Name = "rtb_fatura";
             this.rtb_fatura.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rtb_fatura.Size = new System.Drawing.Size(350, 275);
+            this.rtb_fatura.Size = new System.Drawing.Size(350, 259);
             this.rtb_fatura.TabIndex = 11;
             this.rtb_fatura.Text = "********** GRANDÃO SUPERMECADO **********";
             // 
@@ -143,25 +144,30 @@ namespace hipermercadograndao.Telas
             // 
             this.cmb_Produtos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Produtos.FormattingEnabled = true;
-            this.cmb_Produtos.Location = new System.Drawing.Point(17, 236);
+            this.cmb_Produtos.Location = new System.Drawing.Point(433, 308);
             this.cmb_Produtos.Name = "cmb_Produtos";
-            this.cmb_Produtos.Size = new System.Drawing.Size(292, 23);
+            this.cmb_Produtos.Size = new System.Drawing.Size(230, 23);
             this.cmb_Produtos.TabIndex = 12;
             // 
             // nud_valor
             // 
             this.nud_valor.DecimalPlaces = 2;
-            this.nud_valor.Location = new System.Drawing.Point(182, 69);
+            this.nud_valor.Location = new System.Drawing.Point(177, 69);
+            this.nud_valor.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.nud_valor.Name = "nud_valor";
             this.nud_valor.Size = new System.Drawing.Size(127, 23);
-            this.nud_valor.TabIndex = 13;
+            this.nud_valor.TabIndex = 3;
             // 
             // btn_finalizar
             // 
-            this.btn_finalizar.Location = new System.Drawing.Point(182, 148);
+            this.btn_finalizar.Location = new System.Drawing.Point(177, 148);
             this.btn_finalizar.Name = "btn_finalizar";
-            this.btn_finalizar.Size = new System.Drawing.Size(127, 49);
-            this.btn_finalizar.TabIndex = 15;
+            this.btn_finalizar.Size = new System.Drawing.Size(127, 64);
+            this.btn_finalizar.TabIndex = 6;
             this.btn_finalizar.Text = "Finalizar Compra";
             this.btn_finalizar.UseVisualStyleBackColor = true;
             this.btn_finalizar.Click += new System.EventHandler(this.btn_finalizar_Click);
@@ -169,9 +175,14 @@ namespace hipermercadograndao.Telas
             // nud_quantidade
             // 
             this.nud_quantidade.Location = new System.Drawing.Point(17, 119);
+            this.nud_quantidade.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.nud_quantidade.Name = "nud_quantidade";
-            this.nud_quantidade.Size = new System.Drawing.Size(127, 23);
-            this.nud_quantidade.TabIndex = 17;
+            this.nud_quantidade.Size = new System.Drawing.Size(122, 23);
+            this.nud_quantidade.TabIndex = 4;
             // 
             // lbl_quantidade
             // 
